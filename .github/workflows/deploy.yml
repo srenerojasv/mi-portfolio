@@ -1,0 +1,52 @@
+name: Desplegar Portfolio en GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar código
+        uses: actions/checkout@v4
+
+      - name: Instalar Rust y wasm-bindgen
+        run: |
+          rustup target add wasm32-unknown-unknown
+          cargo install wasm-bindgen-cli
+
+      - name: Compilar Rust a WebAssembly
+        run: |
+          cargo build --manifest-path rust-api/Cargo.toml --target wasm32-unknown-unknown --release
+          wasm-bindgen --target web --out-dir frontend/src/rust-pkg rust-api/target/wasm32-unknown-unknown/release/rust_api.wasm
+
+      - name: Configurar pnpm y Node.js
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'pnpm'
+          cache-dependency-path: frontend/pnpm-lock.yaml
+
+      - name: Compilar Frontend Vue 3
+        working-directory: ./frontend
+        run: |
+          pnpm install
+          pnpm build
+
+      - name: Subir artefacto a GitHub Pages
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./frontend/dist
+
+      - name: Publicar web
+        id: deployment
+        uses: actions/deploy-pages@v4

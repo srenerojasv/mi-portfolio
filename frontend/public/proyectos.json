@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "nombre": "E-Commerce de Alto Rendimiento",
+    "descripcion": "Desarrollo de una plataforma dinámica de comercio electrónico con pasarela de pagos integrada y optimización SEO.",
+    "tecnologias": ["Vue 3", "Node.js", "Tailwind CSS"],
+    "url_proyecto": "https://tu-sitio-demo.com",
+    "url_git": "https://github.com"
+  },
+  {
+    "id": 2,
+    "nombre": "Dashboard Deportivo (API Sports)",
+    "descripcion": "Panel de control dinámico que consume datos en tiempo real de eventos deportivos y estadísticas globales.",
+    "tecnologias": ["Node.js", "Express", "Vite"],
+    "url_proyecto": "https://tu-dashboard.com",
+    "url_git": "https://github.com"
+  }
+]
