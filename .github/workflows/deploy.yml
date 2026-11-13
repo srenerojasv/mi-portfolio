@@ -1,31 +1,44 @@
 name: Desplegar Portfolio en GitHub Pages
 
 on:
+  # Se ejecutará automáticamente cada vez que hagas Push a la rama main
   push:
     branches: [ main ]
+  # También añade un botón para que puedas lanzarlo manualmente desde la web
+  workflow_dispatch:
 
+# Permisos necesarios para que el servidor escriba en GitHub Pages
 permissions:
   contents: read
   pages: write
   id-token: write
 
+# Evita que dos despliegues choquen si subes cambios muy rápido
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
+      # 1. Descarga tu código en el servidor de GitHub
       - name: Descargar código
         uses: actions/checkout@v4
 
+      # 2. Prepara el compilador de Rust y WebAssembly
       - name: Instalar Rust y wasm-bindgen
         run: |
           rustup target add wasm32-unknown-unknown
           cargo install wasm-bindgen-cli
 
+      # 3. Compila tu lógica de Rust y la guarda dentro de Vue
       - name: Compilar Rust a WebAssembly
         run: |
           cargo build --manifest-path rust-api/Cargo.toml --target wasm32-unknown-unknown --release
           wasm-bindgen --target web --out-dir frontend/src/rust-pkg rust-api/target/wasm32-unknown-unknown/release/rust_api.wasm
 
+      # 4. Prepara pnpm y Node.js en el servidor
       - name: Configurar pnpm y Node.js
         uses: pnpm/action-setup@v4
         with:
@@ -36,17 +49,20 @@ jobs:
           cache: 'pnpm'
           cache-dependency-path: frontend/pnpm-lock.yaml
 
+      # 5. Instala dependencias de Vue y genera la web final (carpeta dist)
       - name: Compilar Frontend Vue 3
         working-directory: ./frontend
         run: |
           pnpm install
           pnpm build
 
+      # 6. Empaqueta la carpeta dist para GitHub Pages
       - name: Subir artefacto a GitHub Pages
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./frontend/dist
 
+      # 7. Publica la web en internet
       - name: Publicar web
         id: deployment
         uses: actions/deploy-pages@v4
