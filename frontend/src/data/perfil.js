@@ -10,7 +10,7 @@ export const perfil = {
     'Construyo aplicaciones web rápidas y accesibles, combinando la ergonomía de Vue 3 con la potencia de Rust compilado a WebAssembly.',
   email: '',
   github: 'https://github.com/srenerojasv',
-  linkedin: '',
+  linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
 
   stack: ['Vue 3', 'Rust', 'WebAssembly', 'Tailwind CSS'],
 
