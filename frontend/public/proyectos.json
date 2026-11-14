@@ -1,18 +1,59 @@
 [
   {
-    "id": 1,
-    "nombre": "E-Commerce de Alto Rendimiento",
-    "descripcion": "Desarrollo de una plataforma dinámica de comercio electrónico con pasarela de pagos integrada y optimización SEO.",
-    "tecnologias": ["Vue 3", "Node.js", "Tailwind CSS"],
-    "url_proyecto": "https://tu-sitio-demo.com",
-    "url_git": "https://github.com"
+    "id": "kfexito",
+    "nombre": "KFEXITO — Cafetería",
+    "descripcion": "Landing corporativa para una cafetería con carrusel, historia, servicios, menú, reservas y formulario de contacto. Animaciones al hacer scroll y diseño completamente responsive.",
+    "tecnologias": ["HTML5", "CSS3", "Bootstrap 4", "jQuery", "Owl Carousel"],
+    "url_proyecto": "https://kfexito.vercel.app/",
+    "imagen": "/proyectos/kfexito.jpg"
   },
   {
-    "id": 2,
-    "nombre": "Dashboard Deportivo (API Sports)",
-    "descripcion": "Panel de control dinámico que consume datos en tiempo real de eventos deportivos y estadísticas globales.",
-    "tecnologias": ["Node.js", "Express", "Vite"],
-    "url_proyecto": "https://tu-dashboard.com",
-    "url_git": "https://github.com"
+    "id": "quiniela-world-cup-pro",
+    "nombre": "Quiniela Mundial 2026",
+    "descripcion": "PWA de pronósticos deportivos para el Mundial 2026, con verificación Pro mediante un mini-juego de penales, modo estadio y experiencia instalable en el dispositivo.",
+    "tecnologias": ["Next.js", "React", "PWA", "Service Worker"],
+    "url_proyecto": "https://quiniela-world-cup-pro.vercel.app/",
+    "imagen": "/proyectos/quiniela-world-cup-pro.jpg"
+  },
+  {
+    "id": "luluvi",
+    "nombre": "Luluvi — Psicología, Sexología y Coaching",
+    "descripcion": "Sitio de marca personal para psicóloga, sexóloga y coach: eventos, e-shop, consultas, libros y contacto. Incluye ocho idiomas, modo oscuro/claro, pagos manuales, panel de administración y PWA instalable.",
+    "tecnologias": ["HTML5", "CSS3", "JavaScript", "i18n", "PWA"],
+    "url_proyecto": "https://luluvi.vercel.app/",
+    "url_git": "https://github.com/srenerojasv/luluvi-web",
+    "imagen": "/proyectos/luluvi.jpg"
+  },
+  {
+    "id": "sorteos-luluvi-contigo",
+    "nombre": "Luluvi Contigo — Sorteos",
+    "descripcion": "Landing de sorteo con cuenta atrás en vivo, boletos de 3 USD, premios escalonados y capítulo de regalo. Checkout coordinado por WhatsApp y validación de participación.",
+    "tecnologias": ["React", "Vite", "SPA"],
+    "url_proyecto": "https://sorteos-luluvi-contigo.vercel.app/",
+    "imagen": "/proyectos/sorteos-luluvi-contigo.jpg"
+  },
+  {
+    "id": "pidetucita",
+    "nombre": "PideTuCita — SaaS de citas",
+    "descripcion": "Plataforma SaaS multitenant para negocios de servicios: agenda online, clientes, inventario, personal y comisiones automáticas, con landing segmentada por 20 nichos.",
+    "tecnologias": ["Next.js", "React", "Tailwind CSS", "PWA"],
+    "url_proyecto": "https://pidetucita.vercel.app/",
+    "imagen": "/proyectos/pidetucita.jpg"
+  },
+  {
+    "id": "bazar-cristina",
+    "nombre": "Bazar Cristina POS",
+    "descripcion": "Punto de venta para bazar: catálogo de productos, pedido en curso, cálculo del total y cobro. Acceso por biometría o contraseña y una interfaz pensada para el mostrador.",
+    "tecnologias": ["Vite", "JavaScript", "Tailwind CSS", "LocalStorage"],
+    "url_proyecto": "https://bazar-cristina.vercel.app/",
+    "imagen": "/proyectos/bazar-cristina.jpg"
+  },
+  {
+    "id": "roadmap-pwa",
+    "nombre": "E-MANAGEMENT PRO — Gestión 360",
+    "descripcion": "Suite de gestión empresarial con dashboard, visión general, tareas y administración. Autenticación corporativa, gráficos interactivos, exportación a PDF y documentación integrada.",
+    "tecnologias": ["JavaScript", "Supabase", "Chart.js", "PWA"],
+    "url_proyecto": "https://roadmap-pwa.vercel.app/",
+    "imagen": "/proyectos/roadmap-pwa.jpg"
   }
 ]

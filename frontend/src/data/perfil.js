@@ -4,15 +4,15 @@ export const perfil = {
   nombre: 'Samuel René Rojas Villamarín',
   nombreCorto: 'Samuel Rojas',
   rol: 'Desarrollador Full Stack',
-  ubicacion: 'Chile',
+  ubicacion: 'Castilleja de la Cuesta, Sevilla, España',
   disponibilidad: 'Disponible para nuevos proyectos',
   resumen:
-    'Construyo aplicaciones web rápidas y accesibles, combinando la ergonomía de Vue 3 con la potencia de Rust compilado a WebAssembly.',
-  email: '',
+    'Desarrollo productos web de punta a punta: landings de marca, SaaS multitenant, puntos de venta y PWAs. Combino interfaces cuidadas con lógica de cliente rápida y despliegues estáticos.',
+  email: 'srene.rojasv@gmail.com',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
 
-  stack: ['Vue 3', 'Rust', 'WebAssembly', 'Tailwind CSS'],
+  stack: ['Vue 3', 'React', 'Next.js', 'Rust + Wasm', 'Tailwind CSS'],
 
   pilares: [
     { titulo: 'Wasm', detalle: 'Lógica en el cliente' },
@@ -21,8 +21,8 @@ export const perfil = {
   ],
 
   sobreMi: [
-    'Soy desarrollador web y disfruto convertir ideas en interfaces claras, rápidas y fáciles de usar. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
-    'Este portafolio es también un experimento: Vue 3 se encarga de la interfaz, Tailwind del diseño y Rust compilado a WebAssembly de la lógica de datos. Todo se sirve como sitio estático desde GitHub Pages.',
+    'Soy desarrollador web y disfruto convertir ideas en productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
+    'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico, dashboards con Supabase y varias PWAs. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
   ],
 
   enfoque: [

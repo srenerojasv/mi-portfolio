@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 import SectionHeading from '@/components/SectionHeading.vue'
 import { useProyectos } from '@/composables/useProyectos'
 
@@ -111,54 +112,14 @@ watch(tecnologias, (lista) => {
         </p>
 
         <div v-if="proyectosFiltrados.length" class="grid grid-cols-1 gap-6 md:grid-cols-2">
-          <article
-            v-for="proyecto in proyectosFiltrados"
+          <div
+            v-for="(proyecto, indice) in proyectosFiltrados"
             :key="proyecto.id"
-            class="group flex flex-col justify-between rounded-2xl border border-slate-800/80 bg-slate-900/50 p-6 transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/50 hover:shadow-lg hover:shadow-cyan-500/5"
+            v-reveal="indice * 80"
+            class="h-full"
           >
-            <div>
-              <div
-                class="mb-4 h-1 w-12 rounded-full bg-gradient-to-r from-cyan-400 to-indigo-500"
-              ></div>
-              <h3 class="mb-2 text-xl font-bold text-white">
-                {{ proyecto.nombre }}
-              </h3>
-              <p class="mb-4 text-sm leading-relaxed text-slate-400">{{ proyecto.descripcion }}</p>
-            </div>
-
-            <div class="mt-2 flex flex-col gap-4">
-              <ul class="flex flex-wrap gap-2" aria-label="Tecnologías usadas">
-                <li
-                  v-for="tag in proyecto.tecnologias"
-                  :key="tag"
-                  class="rounded-md border border-cyan-500/10 bg-slate-950 px-2.5 py-1 text-xs font-medium text-cyan-400"
-                >
-                  {{ tag }}
-                </li>
-              </ul>
-
-              <div class="flex flex-wrap gap-2">
-                <a
-                  v-if="proyecto.url_proyecto"
-                  :href="proyecto.url_proyecto"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex-1 rounded-xl bg-cyan-500 px-4 py-2 text-center text-sm font-semibold text-slate-950 transition-colors hover:bg-cyan-400"
-                >
-                  Ver demo ↗
-                </a>
-                <a
-                  v-if="proyecto.url_git"
-                  :href="proyecto.url_git"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="flex-1 rounded-xl bg-slate-800 px-4 py-2 text-center text-sm font-semibold text-white transition-colors hover:bg-slate-700"
-                >
-                  Código ↗
-                </a>
-              </div>
-            </div>
-          </article>
+            <ProjectCard :proyecto="proyecto" />
+          </div>
         </div>
 
         <p
