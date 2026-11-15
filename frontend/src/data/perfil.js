@@ -121,6 +121,7 @@ export const perfil = {
       puesto: 'Automatización industrial — Empaquetadora',
       empresa: 'Proyecto técnico con PLC Delta',
       periodo: '2026',
+      demo: true,
       descripcion:
         'Máquina empaquetadora con 3 motores y sus drivers, sensores PNP/NPN, solenoides, panel de control, luces de estado y pantalla HDMI para el conteo de ciclos y el paso a paso del proceso.',
       logros: [

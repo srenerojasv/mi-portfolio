@@ -1,4 +1,5 @@
 <script setup>
+import EmpaquetadoraDemo from '@/components/EmpaquetadoraDemo.vue'
 import SectionHeading from '@/components/SectionHeading.vue'
 import { perfil } from '@/data/perfil'
 </script>
@@ -49,6 +50,8 @@ import { perfil } from '@/data/perfil'
                 <span>{{ logro }}</span>
               </li>
             </ul>
+
+            <EmpaquetadoraDemo v-if="item.demo" />
           </div>
         </li>
       </ol>
