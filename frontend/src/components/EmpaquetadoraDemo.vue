@@ -1,6 +1,6 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
-import EmpaquetadoraEsquema from '@/components/EmpaquetadoraEsquema.vue'
+import EmpaquetadoraIsometrica from '@/components/EmpaquetadoraIsometrica.vue'
 
 const PASOS = [
   { n: 1, texto: 'Control de material' },
@@ -188,7 +188,7 @@ async function arrancar() {
   await esperar(base.value)
   if (gen !== token) return
 
-  giro.value += 6
+  giro.value += 22.5
   sincronizado.value = true
   estado.value = 'MARCHA'
 
@@ -273,7 +273,7 @@ onBeforeUnmount(() => {
 
     <div class="mt-4 grid gap-3 lg:grid-cols-[minmax(0,1fr)_264px]">
       <figure class="rounded-2xl border border-slate-800 bg-slate-950/60 p-2 sm:p-3">
-        <EmpaquetadoraEsquema
+        <EmpaquetadoraIsometrica
           :giro="giro"
           :dur="dur"
           :paso="paso"
@@ -286,6 +286,7 @@ onBeforeUnmount(() => {
           :s2="s2"
           :productos="pasosVisibles"
           :material="material"
+          :estado="estado"
         />
 
         <figcaption
