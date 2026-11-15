@@ -7,7 +7,7 @@ export const perfil = {
   ubicacion: 'Castilleja de la Cuesta, Sevilla, España',
   disponibilidad: 'Disponible para nuevos proyectos',
   resumen:
-    'Desarrollo productos web de punta a punta: interfaces cuidadas, lógica de cliente rápida y backend con Supabase y Stripe. Trabajo con autenticación, PostgreSQL, RLS, Storage y Edge Functions, además de despliegues estáticos y CI/CD.',
+    'Con más de 30 años en tecnología, desarrollo productos web de punta a punta: interfaces cuidadas, lógica de cliente rápida y backend con Supabase y Stripe. Trabajo con autenticación, PostgreSQL, RLS, Storage y Edge Functions, además de despliegues estáticos y CI/CD.',
   email: 'srene.rojasv@gmail.com',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
@@ -21,7 +21,7 @@ export const perfil = {
   ],
 
   sobreMi: [
-    'Soy desarrollador web y disfruto convertir ideas en productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
+    'Soy desarrollador web con más de 30 años de experiencia en tecnología. Empecé en soporte técnico, redes, servidores y bases de datos, y hoy construyo productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
     'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico y varias PWAs. En el backend he trabajado con Supabase Auth, PostgreSQL con políticas RLS, almacenamiento de archivos (logos y comprobantes de pago) y Edge Functions en Deno; también he integrado Stripe Checkout para cobros en línea. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
   ],
 
@@ -63,51 +63,71 @@ export const perfil = {
 
   experiencia: [
     {
-      puesto: 'PideTuCita — SaaS de citas',
-      empresa: 'Proyecto personal',
-      periodo: '2026',
+      puesto: 'Desarrollador Full Stack & Consultor',
+      empresa: 'Freelance / Consultoría internacional',
+      periodo: '2024 — presente',
       descripcion:
-        'Plataforma SaaS multitenant para negocios de servicios, con onboarding de cada negocio y gestión de agenda, personal e inventario.',
+        'Diseño, desarrollo y despliegue de plataformas web, e-commerce y PWAs para clientes internacionales, con frontend moderno y backend en Supabase.',
       logros: [
-        'Modelo de datos multitenant en PostgreSQL (Supabase) con una función RPC que inserta en lote la configuración inicial de cada negocio.',
-        'Bucket de Storage «tenant-assets» para logos y comprobantes de pago, con subida desde el onboarding y generación de URLs públicas.',
-        'Ruta API en servidor con service role para registrar leads, separando el acceso privilegiado del código que corre en el cliente.',
+        'PideTuCita: SaaS multitenant en Next.js con PostgreSQL, RPC de onboarding, bucket de Storage «tenant-assets» para logos y comprobantes de pago, y API route con service role.',
+        'Luluvi Contigo: Edge Function en Deno («create-checkout») que crea sesiones de Stripe Checkout y persiste los estados de pago para su verificación.',
+        'E-MANAGEMENT PRO: autenticación con Supabase Auth, PostgreSQL y políticas RLS para proteger los datos.',
+        'PWAs con soporte offline, optimización de Web Vitals y despliegues CI/CD en Vercel y GitHub Pages.',
       ],
     },
     {
-      puesto: 'Luluvi Contigo — Sorteos',
-      empresa: 'Proyecto personal',
-      periodo: '2026',
+      puesto: 'Desarrollador de Software',
+      empresa: 'Tractopipe',
+      periodo: '2023 — 2024',
       descripcion:
-        'Landing de sorteo con compra de boletos y pago en línea mediante Stripe Checkout.',
+        'Software de alta precisión para procesar, visualizar y analizar datos de protección catódica en la industria petrolera y de ductos.',
       logros: [
-        'Edge Function en Deno («create-checkout») que crea la sesión de pago de Stripe con el precio y las URLs de retorno.',
-        'Invocación desde el frontend con «supabase.functions.invoke» y redirección a Stripe; estados de pago («pendiente_stripe», «pago_verificando») persistidos en la base de datos.',
-        'Panel de administración para revisar referencias y verificar cada pago antes de validar la participación.',
+        'Algoritmos para interpretar automáticamente métricas de protección de infraestructura crítica.',
+        'Optimización del procesamiento de grandes volúmenes de datos industriales y de la generación de reportes.',
       ],
     },
     {
-      puesto: 'E-MANAGEMENT PRO — Gestión 360',
-      empresa: 'Proyecto personal',
-      periodo: '2026',
+      puesto: 'Desarrollador Full Stack',
+      empresa: 'JR MOTOS',
+      periodo: '2021 — 2023',
       descripcion:
-        'Suite de gestión empresarial con dashboard, visión general, tareas y administración de equipos.',
+        'Ecosistema digital interno para inventario, compras y gestión de clientes en el sector de la motocicleta.',
       logros: [
-        'Autenticación con Supabase Auth y sesión persistente en una PWA.',
-        'Tablas y consultas en PostgreSQL para tareas, perfiles, asignaciones y notas.',
-        'Políticas RLS para restringir el acceso a usuarios autenticados y proteger los datos de la aplicación.',
+        'CRM interno y sistema automatizado de control de inventario y compras, desarrollados desde cero.',
+        'Integración de pasarelas de pago web y arquitectura de base de datos para stock y transacciones.',
       ],
     },
     {
-      puesto: 'Portafolio con Rust + WebAssembly',
-      empresa: 'Proyecto personal',
-      periodo: '2026',
+      puesto: 'Desarrollador Web Front-End / Diseñador UI',
+      empresa: 'COVICSAN',
+      periodo: '2019 — 2021',
       descripcion:
-        'Landing dinámica que carga su contenido a través de un módulo de Rust compilado a WebAssembly.',
+        'Diseño y desarrollo del ecosistema digital corporativo, con foco en la tienda en línea y la identidad visual.',
       logros: [
-        'Integración de wasm-bindgen con Vue 3 y Vite sin dependencias de backend.',
-        'Pipeline de CI/CD que compila Rust y publica en GitHub Pages en cada push.',
-        'Diseño responsive con Tailwind v4 y manejo explícito de estados de carga y error.',
+        'Tienda en línea oficial desarrollada desde cero y optimizada para conversión.',
+        'Diseño UI/UX, recursos gráficos y presencia digital de la marca.',
+      ],
+    },
+    {
+      puesto: 'Desarrollador Web & Diseñador Digital',
+      empresa: 'E-MAX',
+      periodo: '2018 — 2019',
+      descripcion: 'Desarrollo web y estrategia de identidad digital para la marca.',
+      logros: [
+        'Tienda en línea completa con WordPress, HTML y CSS.',
+        'Optimización de velocidad de carga y visualización en dispositivos móviles.',
+      ],
+    },
+    {
+      puesto: 'Sistemas, infraestructura y desarrollo a medida',
+      empresa: 'Cencob · Grupo Ruvemaca · Transporte Hermanos García · CADELA',
+      periodo: '1993 — 2018',
+      descripcion:
+        'Base técnica de 25 años en soporte, redes, servidores, bases de datos y desarrollo de sistemas para empresas de seguros, cobranza y transporte.',
+      logros: [
+        'Administración de bases de datos MySQL de alta transaccionalidad y plataformas web de cobranza para aseguradoras.',
+        'Redes LAN/WAN para 14 sedes, servidores Linux y telefonía IP (Asterisk/Elastix).',
+        'Desarrollo de sistemas a medida en Clipper y dBase, y coordinación de equipos de soporte de niveles 1 a 3.',
       ],
     },
   ],
