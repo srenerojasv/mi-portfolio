@@ -7,28 +7,38 @@ export const perfil = {
   ubicacion: 'Castilleja de la Cuesta, Sevilla, España',
   disponibilidad: 'Disponible para nuevos proyectos',
   resumen:
-    'Con más de 30 años en tecnología, desarrollo productos web de punta a punta: interfaces cuidadas, lógica de cliente rápida y backend con Supabase y Stripe. Trabajo con autenticación, PostgreSQL, RLS, Storage y Edge Functions, además de despliegues estáticos y CI/CD.',
+    'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: interfaces cuidadas, backend con Supabase y Stripe, y CI/CD con GitHub Actions, Vercel y GitHub Pages.',
   email: 'srene.rojasv@gmail.com',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
 
-  stack: ['Vue 3', 'React', 'Next.js', 'Supabase', 'Stripe', 'Rust + Wasm'],
+  stack: [
+    'Vue 3',
+    'React',
+    'Next.js',
+    'Supabase',
+    'Stripe',
+    'Vercel',
+    'GitHub Actions',
+    'Rust + Wasm',
+  ],
 
   pilares: [
     { titulo: 'Frontend', detalle: 'Vue, React y Next.js' },
-    { titulo: 'Backend', detalle: 'Supabase + PostgreSQL' },
-    { titulo: 'Pagos', detalle: 'Stripe Checkout' },
+    { titulo: 'Backend & Pagos', detalle: 'Supabase · PostgreSQL · Stripe' },
+    { titulo: 'Despliegue', detalle: 'Vercel · GitHub Pages · CI/CD' },
   ],
 
   sobreMi: [
     'Soy desarrollador web con más de 30 años de experiencia en tecnología. Empecé en soporte técnico, redes, servidores y bases de datos, y hoy construyo productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
-    'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico y varias PWAs. En el backend he trabajado con Supabase Auth, PostgreSQL con políticas RLS, almacenamiento de archivos (logos y comprobantes de pago) y Edge Functions en Deno; también he integrado Stripe Checkout para cobros en línea. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
+    'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico y varias PWAs. En el backend he trabajado con Supabase Auth, PostgreSQL con políticas RLS, almacenamiento de archivos (logos y comprobantes de pago) y Edge Functions en Deno; también he integrado Stripe Checkout para cobros en línea. En despliegue trabajo con GitHub para el control de versiones, Vercel para las aplicaciones y GitHub Pages + GitHub Actions para sitios estáticos y builds automatizados. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
   ],
 
   enfoque: [
     'Interfaces accesibles y responsive desde el primer boceto.',
     'Código mantenible, tipado cuando aporta y bien organizado.',
     'Rendimiento medible: menos JavaScript, mejores métricas.',
+    'Despliegue continuo: de GitHub a Vercel o GitHub Pages sin pasos manuales.',
   ],
 
   skills: [
@@ -55,9 +65,14 @@ export const perfil = {
       ],
     },
     {
+      icono: '🚀',
+      categoria: 'Despliegue & DevOps',
+      items: ['Git', 'GitHub', 'GitHub Actions', 'Vercel', 'GitHub Pages', 'CI/CD'],
+    },
+    {
       icono: '🛠️',
       categoria: 'Herramientas',
-      items: ['Git', 'GitHub Actions', 'pnpm', 'ESLint', 'Prettier', 'Figma'],
+      items: ['pnpm', 'ESLint', 'Prettier', 'Figma'],
     },
   ],
 
@@ -72,7 +87,8 @@ export const perfil = {
         'PideTuCita: SaaS multitenant en Next.js con PostgreSQL, RPC de onboarding, bucket de Storage «tenant-assets» para logos y comprobantes de pago, y API route con service role.',
         'Luluvi Contigo: Edge Function en Deno («create-checkout») que crea sesiones de Stripe Checkout y persiste los estados de pago para su verificación.',
         'E-MANAGEMENT PRO: autenticación con Supabase Auth, PostgreSQL y políticas RLS para proteger los datos.',
-        'PWAs con soporte offline, optimización de Web Vitals y despliegues CI/CD en Vercel y GitHub Pages.',
+        'Despliegue continuo: Vercel para las aplicaciones, GitHub Pages para sitios estáticos y GitHub Actions para automatizar builds y publicaciones.',
+        'PWAs con soporte offline y optimización de Web Vitals.',
       ],
     },
     {

@@ -12,7 +12,7 @@ import { perfil } from '@/data/perfil'
         description="Un stack elegido por rendimiento y mantenibilidad, no por moda."
       />
 
-      <div class="grid grid-cols-1 gap-6 md:grid-cols-3">
+      <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
         <div
           v-for="grupo in perfil.skills"
           :key="grupo.categoria"

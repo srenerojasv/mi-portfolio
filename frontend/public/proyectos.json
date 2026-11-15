@@ -5,6 +5,7 @@
     "descripcion": "Landing corporativa para una cafetería con carrusel, historia, servicios, menú, reservas y formulario de contacto. Animaciones al hacer scroll y diseño completamente responsive.",
     "tecnologias": ["HTML5", "CSS3", "Bootstrap 4", "jQuery", "Owl Carousel"],
     "url_proyecto": "https://kfexito.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/kfexito.jpg"
   },
   {
@@ -13,6 +14,7 @@
     "descripcion": "PWA de pronósticos deportivos para el Mundial 2026, con verificación Pro mediante un mini-juego de penales, modo estadio y experiencia instalable en el dispositivo.",
     "tecnologias": ["Next.js", "React", "PWA", "Service Worker"],
     "url_proyecto": "https://quiniela-world-cup-pro.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/quiniela-world-cup-pro.jpg"
   },
   {
@@ -21,6 +23,7 @@
     "descripcion": "Sitio de marca personal para psicóloga, sexóloga y coach: eventos, catálogo de libros, consultas y contacto. Incluye cuatro idiomas, temas oscuro/claro/rose, pagos manuales, panel de administración local y PWA instalable.",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "i18n", "PWA"],
     "url_proyecto": "https://luluvi.vercel.app/",
+    "despliegue": "Vercel",
     "url_git": "https://github.com/srenerojasv/luluvi-web",
     "imagen": "/proyectos/luluvi.jpg"
   },
@@ -30,6 +33,7 @@
     "descripcion": "Landing de sorteo con cuenta atrás en vivo, boletos de 3 USD, premios escalonados y capítulo de regalo. El pago se procesa con Stripe Checkout desde una Edge Function de Supabase y la participación se valida en un panel de administración.",
     "tecnologias": ["React", "Vite", "Supabase", "Edge Functions", "Stripe", "Deno"],
     "url_proyecto": "https://sorteos-luluvi-contigo.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/sorteos-luluvi-contigo.jpg"
   },
   {
@@ -38,6 +42,7 @@
     "descripcion": "Plataforma SaaS multitenant para negocios de servicios: onboarding de cada negocio en PostgreSQL (Supabase), agenda online, clientes, inventario, personal y comisiones automáticas, con landing segmentada por 20 nichos. Los logos y comprobantes de pago se gestionan en Supabase Storage.",
     "tecnologias": ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "PWA"],
     "url_proyecto": "https://pidetucita.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/pidetucita.jpg"
   },
   {
@@ -46,6 +51,7 @@
     "descripcion": "Punto de venta para bazar: catálogo de productos, pedido en curso, cálculo del total y cobro. Acceso por biometría o contraseña y una interfaz pensada para el mostrador.",
     "tecnologias": ["Vite", "JavaScript", "Tailwind CSS", "LocalStorage"],
     "url_proyecto": "https://bazar-cristina.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/bazar-cristina.jpg"
   },
   {
@@ -54,6 +60,7 @@
     "descripcion": "Suite de gestión empresarial con dashboard, visión general, tareas y administración. Autenticación con Supabase Auth, datos en PostgreSQL protegidos con RLS, gráficos interactivos, exportación a PDF y documentación integrada.",
     "tecnologias": ["JavaScript", "Supabase Auth", "PostgreSQL", "RLS", "Chart.js", "PWA"],
     "url_proyecto": "https://roadmap-pwa.vercel.app/",
+    "despliegue": "Vercel",
     "imagen": "/proyectos/roadmap-pwa.jpg"
   }
 ]

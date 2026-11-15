@@ -105,6 +105,12 @@ import { perfil } from '@/data/perfil'
               <span class="mx-2 text-slate-600">→</span>
               <span class="text-slate-300">grid de proyectos</span>
             </p>
+            <p>
+              <span class="mr-3 text-slate-600">05</span>
+              <span class="text-amber-300">deploy</span>
+              <span class="mx-2 text-slate-600">→</span>
+              <span class="text-slate-300">GitHub Actions + Pages</span>
+            </p>
           </div>
         </div>
       </div>

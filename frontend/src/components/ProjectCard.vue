@@ -97,6 +97,11 @@ function alSalir() {
           </li>
         </ul>
 
+        <p v-if="proyecto.despliegue" class="flex items-center gap-2 text-xs text-slate-500">
+          <span class="h-1.5 w-1.5 rounded-full bg-emerald-400" aria-hidden="true"></span>
+          Desplegado en {{ proyecto.despliegue }}
+        </p>
+
         <div class="flex flex-wrap gap-2">
           <a
             v-if="proyecto.url_proyecto"
