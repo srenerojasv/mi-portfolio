@@ -1,44 +1,24 @@
-# frontend
+# Frontend — Mi Portafolio
 
-This template should help get you started developing with Vue 3 in Vite.
+Aplicación **Vue 3 + Vite 8 + Tailwind CSS 4** del portafolio. Consume el módulo de Rust/WebAssembly generado en `../rust-api` y carga los proyectos desde `public/proyectos.json`.
 
-## Recommended IDE Setup
+La documentación completa del proyecto está en el [README principal](../README.md).
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+## Requisito previo
 
-## Recommended Browser Setup
+El módulo Wasm (`src/rust-pkg/`) se genera con `wasm-bindgen` y no se versiona. Antes del primer arranque, sigue los pasos de compilación del README principal.
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+## Comandos
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
-
-```sh
+```bash
 pnpm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
-pnpm dev
-```
-
-### Compile and Minify for Production
-
-```sh
-pnpm build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
+pnpm dev      # http://localhost:5173/mi-portfolio/
+pnpm build    # dist/
+pnpm preview
 pnpm lint
+pnpm format
 ```
+
+## Variables de entorno
+
+No se requieren variables de entorno ni servicios externos. El sitio se publica como build estático.
