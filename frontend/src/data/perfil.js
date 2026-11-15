@@ -7,7 +7,7 @@ export const perfil = {
   ubicacion: 'Castilleja de la Cuesta, Sevilla, España',
   disponibilidad: 'Disponible para nuevos proyectos',
   resumen:
-    'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: interfaces cuidadas, backend con Supabase y Stripe, y CI/CD con GitHub Actions, Vercel y GitHub Pages.',
+    'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: interfaces cuidadas, backend con Supabase y Stripe, CI/CD con GitHub Actions, Vercel y GitHub Pages, e IA aplicada al análisis y la automatización de procesos.',
   email: 'srene.rojasv@gmail.com',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
@@ -21,17 +21,20 @@ export const perfil = {
     'Vercel',
     'GitHub Actions',
     'Rust + Wasm',
+    'IA aplicada',
   ],
 
   pilares: [
     { titulo: 'Frontend', detalle: 'Vue, React y Next.js' },
     { titulo: 'Backend & Pagos', detalle: 'Supabase · PostgreSQL · Stripe' },
     { titulo: 'Despliegue', detalle: 'Vercel · GitHub Pages · CI/CD' },
+    { titulo: 'IA & Automatización', detalle: 'ChatGPT · Gemini · Claude · Qwen' },
   ],
 
   sobreMi: [
     'Soy desarrollador web con más de 30 años de experiencia en tecnología. Empecé en soporte técnico, redes, servidores y bases de datos, y hoy construyo productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
     'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico y varias PWAs. En el backend he trabajado con Supabase Auth, PostgreSQL con políticas RLS, almacenamiento de archivos (logos y comprobantes de pago) y Edge Functions en Deno; también he integrado Stripe Checkout para cobros en línea. En despliegue trabajo con GitHub para el control de versiones, Vercel para las aplicaciones y GitHub Pages + GitHub Actions para sitios estáticos y builds automatizados. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
+    'Mi experiencia previa en soporte, infraestructura y análisis de datos me enseñó a entender cómo funciona un negocio antes de escribir código. Esa base me permite adaptarme a procesos distintos, detectar cuellos de botella y automatizarlos con soluciones a medida, de forma efectiva y oportuna. Hoy incorporo IA generativa —ChatGPT, Gemini, Claude, Claude Code, Grok y Qwen— al análisis, la documentación, el prototipado y la automatización.',
   ],
 
   enfoque: [
@@ -39,6 +42,8 @@ export const perfil = {
     'Código mantenible, tipado cuando aporta y bien organizado.',
     'Rendimiento medible: menos JavaScript, mejores métricas.',
     'Despliegue continuo: de GitHub a Vercel o GitHub Pages sin pasos manuales.',
+    'Automatización de procesos: entiendo el flujo real, detecto el trabajo manual y lo convierto en una solución a medida.',
+    'IA aplicada: uso ChatGPT, Gemini, Claude, Claude Code, Grok y Qwen para analizar, documentar y acelerar la entrega.',
   ],
 
   skills: [
@@ -61,6 +66,8 @@ export const perfil = {
         'Node.js',
         'APIs REST',
         'SQL',
+        'Análisis de datos',
+        'Automatización de procesos',
         'Rust + Wasm',
       ],
     },
@@ -70,9 +77,20 @@ export const perfil = {
       items: ['Git', 'GitHub', 'GitHub Actions', 'Vercel', 'GitHub Pages', 'CI/CD'],
     },
     {
-      icono: '🛠️',
-      categoria: 'Herramientas',
-      items: ['pnpm', 'ESLint', 'Prettier', 'Figma'],
+      icono: '🤖',
+      categoria: 'IA & Herramientas',
+      items: [
+        'ChatGPT',
+        'Gemini',
+        'Claude',
+        'Claude Code',
+        'Grok',
+        'Qwen',
+        'pnpm',
+        'ESLint',
+        'Prettier',
+        'Figma',
+      ],
     },
   ],
 
@@ -88,6 +106,7 @@ export const perfil = {
         'Luluvi Contigo: Edge Function en Deno («create-checkout») que crea sesiones de Stripe Checkout y persiste los estados de pago para su verificación.',
         'E-MANAGEMENT PRO: autenticación con Supabase Auth, PostgreSQL y políticas RLS para proteger los datos.',
         'Otros proyectos: Luluvi (marca personal con i18n y PWA), Bazar Cristina (punto de venta con acceso biométrico), KFEXITO (landing corporativa), Quiniela Mundial 2026 (PWA de pronósticos) y este portafolio (Vue 3 + Rust/Wasm, publicado en GitHub Pages).',
+        'Automatización de procesos y análisis de datos para clientes, con IA generativa como apoyo en documentación, prototipado y resolución de problemas.',
         'Despliegue continuo: Vercel para las aplicaciones, GitHub Pages para sitios estáticos y GitHub Actions para automatizar builds y publicaciones.',
         'PWAs con soporte offline y optimización de Web Vitals.',
       ],
@@ -145,6 +164,7 @@ export const perfil = {
         'Administración de bases de datos MySQL de alta transaccionalidad y plataformas web de cobranza para aseguradoras.',
         'Redes LAN/WAN para 14 sedes, servidores Linux y telefonía IP (Asterisk/Elastix).',
         'Desarrollo de sistemas a medida en Clipper y dBase, y coordinación de equipos de soporte de niveles 1 a 3.',
+        'Automatización de procesos administrativos y de cobranza, y análisis de datos operativos para detectar cuellos de botella y mejorar tiempos.',
       ],
     },
   ],
