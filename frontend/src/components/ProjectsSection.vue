@@ -1,4 +1,5 @@
 <script setup>
+import Empaquetadora3D from './Empaquetadora3D.vue'
 import { computed, ref, watch } from 'vue'
 import ProjectCard from '@/components/ProjectCard.vue'
 import SectionHeading from '@/components/SectionHeading.vue'
@@ -111,14 +112,20 @@ watch(tecnologias, (lista) => {
           {{ proyectosFiltrados.length === 1 ? 'proyecto' : 'proyectos' }}
         </p>
 
-        <div v-if="proyectosFiltrados.length" class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                <div v-if="proyectosFiltrados.length" class="grid grid-cols-1 gap-6 md:grid-cols-2">
           <div
             v-for="(proyecto, indice) in proyectosFiltrados"
             :key="proyecto.id"
             v-reveal="indice * 80"
             class="h-full"
           >
-            <ProjectCard :proyecto="proyecto" />
+            <!-- 👇 SI ES LA EMPAQUETADORA, MUESTRA EL 3D 👇 -->
+            <Empaquetadora3D 
+              v-if="proyecto.titulo?.includes('Empaquetadora') || proyecto.id === 'empaquetadora'"
+            />
+            
+            <!-- 👇 SI NO, MUESTRA LA TARJETA NORMAL 👇 -->
+            <ProjectCard v-else :proyecto="proyecto" />
           </div>
         </div>
 
