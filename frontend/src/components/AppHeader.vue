@@ -70,7 +70,7 @@ onBeforeUnmount(() => {
           <img
             :src="logo"
             alt=""
-            class="h-full w-full object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]"
+            class="h-full w-full object-contain [filter:drop-shadow(0_0_10px_rgba(176,139,27,0.55))_drop-shadow(0_2px_4px_rgba(0,0,0,0.6))]"
             width="250"
             height="276"
           />
