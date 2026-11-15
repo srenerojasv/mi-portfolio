@@ -1,5 +1,6 @@
 <script setup>
 import { computed, onBeforeUnmount, onMounted, ref } from 'vue'
+import logo from '@/assets/logo-samuel.png'
 import { perfil } from '@/data/perfil'
 
 const secciones = [
@@ -13,15 +14,6 @@ const secciones = [
 const menuAbierto = ref(false)
 const seccionActiva = ref('')
 const conSombra = ref(false)
-
-const iniciales = computed(() =>
-  perfil.nombre
-    .split(' ')
-    .filter(Boolean)
-    .slice(0, 2)
-    .map((parte) => parte[0])
-    .join(''),
-)
 
 const nombreVisible = computed(() => perfil.nombreCorto || perfil.nombre)
 
@@ -73,9 +65,15 @@ onBeforeUnmount(() => {
         @click="menuAbierto = false"
       >
         <span
-          class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-400 to-indigo-500 text-sm font-extrabold text-slate-950 transition-transform group-hover:scale-105"
+          class="flex h-10 w-10 shrink-0 items-center justify-center transition-transform group-hover:scale-105"
         >
-          {{ iniciales }}
+          <img
+            :src="logo"
+            alt=""
+            class="h-full w-full object-contain drop-shadow-[0_2px_6px_rgba(0,0,0,0.5)]"
+            width="250"
+            height="276"
+          />
         </span>
         <span class="hidden text-sm font-semibold text-slate-200 sm:block">{{
           nombreVisible
