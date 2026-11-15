@@ -9,7 +9,7 @@ import { perfil } from '@/data/perfil'
       <SectionHeading
         eyebrow="Trayectoria"
         title="Experiencia"
-        description="Treinta años de trayectoria: de la infraestructura y el soporte a productos full stack con Supabase y Stripe."
+        description="Treinta años de trayectoria: de la infraestructura y el soporte a productos full stack y automatización industrial."
       />
 
       <ol class="relative space-y-8 border-l border-slate-800 pl-6 md:pl-8">
