@@ -7,7 +7,7 @@ export const perfil = {
   ubicacion: 'Castilleja de la Cuesta, Sevilla, España',
   disponibilidad: 'Disponible para nuevos proyectos',
   resumen:
-    'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: interfaces cuidadas, backend con Supabase y Stripe, CI/CD con GitHub Actions, Vercel y GitHub Pages, e IA aplicada al análisis y la automatización de procesos.',
+    'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: frontend, backend con Supabase y Stripe, CI/CD, y automatización de procesos con IA, PLC y CODESYS.',
   email: 'srene.rojasv@gmail.com',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
@@ -22,19 +22,22 @@ export const perfil = {
     'GitHub Actions',
     'Rust + Wasm',
     'IA aplicada',
+    'PLC · CODESYS',
   ],
 
   pilares: [
     { titulo: 'Frontend', detalle: 'Vue, React y Next.js' },
     { titulo: 'Backend & Pagos', detalle: 'Supabase · PostgreSQL · Stripe' },
     { titulo: 'Despliegue', detalle: 'Vercel · GitHub Pages · CI/CD' },
-    { titulo: 'IA & Automatización', detalle: 'ChatGPT · Gemini · Claude · Qwen' },
+    { titulo: 'IA aplicada', detalle: 'ChatGPT · Gemini · Claude · Qwen' },
+    { titulo: 'Automatización industrial', detalle: 'PLC · CODESYS' },
+    { titulo: 'Análisis de datos', detalle: 'SQL · Reportes · Mejora de procesos' },
   ],
 
   sobreMi: [
     'Soy desarrollador web con más de 30 años de experiencia en tecnología. Empecé en soporte técnico, redes, servidores y bases de datos, y hoy construyo productos completos: desde una landing de marca hasta una plataforma SaaS con agenda, inventario o cobros. Me interesa especialmente el rendimiento: cada kilobyte y cada render cuentan.',
     'He construido landings corporativas, un SaaS multitenant para negocios de servicios, un punto de venta con acceso biométrico y varias PWAs. En el backend he trabajado con Supabase Auth, PostgreSQL con políticas RLS, almacenamiento de archivos (logos y comprobantes de pago) y Edge Functions en Deno; también he integrado Stripe Checkout para cobros en línea. En despliegue trabajo con GitHub para el control de versiones, Vercel para las aplicaciones y GitHub Pages + GitHub Actions para sitios estáticos y builds automatizados. Este portafolio es también un experimento: Vue 3 para la interfaz, Tailwind para el diseño y Rust compilado a WebAssembly para la lógica de datos.',
-    'Mi experiencia previa en soporte, infraestructura y análisis de datos me enseñó a entender cómo funciona un negocio antes de escribir código. Esa base me permite adaptarme a procesos distintos, detectar cuellos de botella y automatizarlos con soluciones a medida, de forma efectiva y oportuna. Hoy incorporo IA generativa —ChatGPT, Gemini, Claude, Claude Code, Grok y Qwen— al análisis, la documentación, el prototipado y la automatización.',
+    'Mi experiencia previa en soporte, infraestructura, análisis de datos y automatización industrial (PLC, CODESYS) me enseñó a entender cómo funciona un negocio antes de escribir código. Esa base me permite adaptarme a procesos distintos, detectar cuellos de botella y automatizarlos con soluciones a medida, de forma efectiva y oportuna. Hoy incorporo IA generativa —ChatGPT, Gemini, Claude, Claude Code, Grok y Qwen— al análisis, la documentación, el prototipado y la automatización.',
   ],
 
   enfoque: [
@@ -42,7 +45,7 @@ export const perfil = {
     'Código mantenible, tipado cuando aporta y bien organizado.',
     'Rendimiento medible: menos JavaScript, mejores métricas.',
     'Despliegue continuo: de GitHub a Vercel o GitHub Pages sin pasos manuales.',
-    'Automatización de procesos: entiendo el flujo real, detecto el trabajo manual y lo convierto en una solución a medida.',
+    'Automatización de procesos e industrial: PLC, CODESYS y lógica de control para reducir trabajo manual y mejorar tiempos.',
     'IA aplicada: uso ChatGPT, Gemini, Claude, Claude Code, Grok y Qwen para analizar, documentar y acelerar la entrega.',
   ],
 
@@ -69,6 +72,18 @@ export const perfil = {
         'Análisis de datos',
         'Automatización de procesos',
         'Rust + Wasm',
+      ],
+    },
+    {
+      icono: '🏭',
+      categoria: 'Automatización Industrial',
+      items: [
+        'PLC',
+        'CODESYS',
+        'Automatización industrial',
+        'Lógica de control',
+        'Mejora de procesos',
+        'Análisis de datos',
       ],
     },
     {
@@ -155,14 +170,15 @@ export const perfil = {
       ],
     },
     {
-      puesto: 'Sistemas, infraestructura y desarrollo a medida',
+      puesto: 'Sistemas, infraestructura, automatización y desarrollo a medida',
       empresa: 'Cencob · Grupo Ruvemaca · Transporte Hermanos García · CADELA',
       periodo: '1993 — 2018',
       descripcion:
-        'Base técnica de 25 años en soporte, redes, servidores, bases de datos y desarrollo de sistemas para empresas de seguros, cobranza y transporte.',
+        'Base técnica de 25 años en soporte, redes, servidores, bases de datos, automatización industrial y desarrollo de sistemas para empresas de seguros, cobranza y transporte.',
       logros: [
         'Administración de bases de datos MySQL de alta transaccionalidad y plataformas web de cobranza para aseguradoras.',
         'Redes LAN/WAN para 14 sedes, servidores Linux y telefonía IP (Asterisk/Elastix).',
+        'Automatización industrial con PLC y CODESYS en proyectos de control de procesos y mejora operativa.',
         'Desarrollo de sistemas a medida en Clipper y dBase, y coordinación de equipos de soporte de niveles 1 a 3.',
         'Automatización de procesos administrativos y de cobranza, y análisis de datos operativos para detectar cuellos de botella y mejorar tiempos.',
       ],
