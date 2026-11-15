@@ -87,6 +87,7 @@ export const perfil = {
         'PideTuCita: SaaS multitenant en Next.js con PostgreSQL, RPC de onboarding, bucket de Storage «tenant-assets» para logos y comprobantes de pago, y API route con service role.',
         'Luluvi Contigo: Edge Function en Deno («create-checkout») que crea sesiones de Stripe Checkout y persiste los estados de pago para su verificación.',
         'E-MANAGEMENT PRO: autenticación con Supabase Auth, PostgreSQL y políticas RLS para proteger los datos.',
+        'Otros proyectos: Luluvi (marca personal con i18n y PWA), Bazar Cristina (punto de venta con acceso biométrico), KFEXITO (landing corporativa), Quiniela Mundial 2026 (PWA de pronósticos) y este portafolio (Vue 3 + Rust/Wasm, publicado en GitHub Pages).',
         'Despliegue continuo: Vercel para las aplicaciones, GitHub Pages para sitios estáticos y GitHub Actions para automatizar builds y publicaciones.',
         'PWAs con soporte offline y optimización de Web Vitals.',
       ],
