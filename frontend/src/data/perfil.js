@@ -9,6 +9,7 @@ export const perfil = {
   resumen:
     'Con más de 30 años en tecnología, desarrollo y despliego productos web de punta a punta: frontend, backend con Supabase y Stripe, CI/CD, automatización industrial con PLC Delta y aplicaciones de IA.',
   email: 'srene.rojasv@gmail.com',
+  whatsapp: '34623760738',
   github: 'https://github.com/srenerojasv',
   linkedin: 'https://www.linkedin.com/in/samuel-rene-rojas-villamarin/',
 

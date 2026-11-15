@@ -4,6 +4,7 @@ import AppHeader from '@/components/AppHeader.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import ContactSection from '@/components/ContactSection.vue'
 import ExperienceSection from '@/components/ExperienceSection.vue'
+import FloatingActions from '@/components/FloatingActions.vue'
 import HeroSection from '@/components/HeroSection.vue'
 import ProjectsSection from '@/components/ProjectsSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
@@ -30,5 +31,7 @@ import SkillsSection from '@/components/SkillsSection.vue'
     </main>
 
     <AppFooter />
+
+    <FloatingActions />
   </div>
 </template>

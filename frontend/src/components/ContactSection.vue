@@ -2,8 +2,10 @@
 import { onBeforeUnmount, ref } from 'vue'
 import SectionHeading from '@/components/SectionHeading.vue'
 import { perfil } from '@/data/perfil'
+import { crearEnlaceWhatsapp } from '@/utils/whatsapp'
 
 const copiado = ref(false)
+const enlaceWhatsapp = crearEnlaceWhatsapp()
 let temporizador
 
 async function copiarCorreo() {
@@ -74,6 +76,15 @@ onBeforeUnmount(() => clearTimeout(temporizador))
               >
                 {{ copiado ? '¡Copiado!' : 'Copiar correo' }}
               </button>
+              <a
+                v-if="enlaceWhatsapp"
+                :href="enlaceWhatsapp"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="rounded-xl bg-emerald-500 px-5 py-2.5 text-sm font-semibold text-slate-950 transition-colors hover:bg-emerald-400"
+              >
+                WhatsApp ↗
+              </a>
               <a
                 v-if="perfil.github"
                 :href="perfil.github"
