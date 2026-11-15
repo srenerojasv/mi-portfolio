@@ -18,7 +18,7 @@
   {
     "id": "luluvi",
     "nombre": "Luluvi — Psicología, Sexología y Coaching",
-    "descripcion": "Sitio de marca personal para psicóloga, sexóloga y coach: eventos, e-shop, consultas, libros y contacto. Incluye ocho idiomas, modo oscuro/claro, pagos manuales, panel de administración y PWA instalable.",
+    "descripcion": "Sitio de marca personal para psicóloga, sexóloga y coach: eventos, catálogo de libros, consultas y contacto. Incluye cuatro idiomas, temas oscuro/claro/rose, pagos manuales, panel de administración local y PWA instalable.",
     "tecnologias": ["HTML5", "CSS3", "JavaScript", "i18n", "PWA"],
     "url_proyecto": "https://luluvi.vercel.app/",
     "url_git": "https://github.com/srenerojasv/luluvi-web",
@@ -27,16 +27,16 @@
   {
     "id": "sorteos-luluvi-contigo",
     "nombre": "Luluvi Contigo — Sorteos",
-    "descripcion": "Landing de sorteo con cuenta atrás en vivo, boletos de 3 USD, premios escalonados y capítulo de regalo. Checkout coordinado por WhatsApp y validación de participación.",
-    "tecnologias": ["React", "Vite", "SPA"],
+    "descripcion": "Landing de sorteo con cuenta atrás en vivo, boletos de 3 USD, premios escalonados y capítulo de regalo. El pago se procesa con Stripe Checkout desde una Edge Function de Supabase y la participación se valida en un panel de administración.",
+    "tecnologias": ["React", "Vite", "Supabase", "Edge Functions", "Stripe", "Deno"],
     "url_proyecto": "https://sorteos-luluvi-contigo.vercel.app/",
     "imagen": "/proyectos/sorteos-luluvi-contigo.jpg"
   },
   {
     "id": "pidetucita",
     "nombre": "PideTuCita — SaaS de citas",
-    "descripcion": "Plataforma SaaS multitenant para negocios de servicios: agenda online, clientes, inventario, personal y comisiones automáticas, con landing segmentada por 20 nichos.",
-    "tecnologias": ["Next.js", "React", "Tailwind CSS", "PWA"],
+    "descripcion": "Plataforma SaaS multitenant para negocios de servicios: onboarding de cada negocio en PostgreSQL (Supabase), agenda online, clientes, inventario, personal y comisiones automáticas, con landing segmentada por 20 nichos. Los logos y comprobantes de pago se gestionan en Supabase Storage.",
+    "tecnologias": ["Next.js", "React", "Tailwind CSS", "Supabase", "PostgreSQL", "PWA"],
     "url_proyecto": "https://pidetucita.vercel.app/",
     "imagen": "/proyectos/pidetucita.jpg"
   },
@@ -51,8 +51,8 @@
   {
     "id": "roadmap-pwa",
     "nombre": "E-MANAGEMENT PRO — Gestión 360",
-    "descripcion": "Suite de gestión empresarial con dashboard, visión general, tareas y administración. Autenticación corporativa, gráficos interactivos, exportación a PDF y documentación integrada.",
-    "tecnologias": ["JavaScript", "Supabase", "Chart.js", "PWA"],
+    "descripcion": "Suite de gestión empresarial con dashboard, visión general, tareas y administración. Autenticación con Supabase Auth, datos en PostgreSQL protegidos con RLS, gráficos interactivos, exportación a PDF y documentación integrada.",
+    "tecnologias": ["JavaScript", "Supabase Auth", "PostgreSQL", "RLS", "Chart.js", "PWA"],
     "url_proyecto": "https://roadmap-pwa.vercel.app/",
     "imagen": "/proyectos/roadmap-pwa.jpg"
   }
