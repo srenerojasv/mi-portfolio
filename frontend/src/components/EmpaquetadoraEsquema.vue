@@ -1,6 +1,48 @@
 <script setup>
-// Sinóptico técnico de la empaquetadora. Las coordenadas siguen una retícula de
-// 20 px para que trazos, etiquetas y componentes queden alineados.
+import { computed } from 'vue'
+
+const props = defineProps({
+  giro: { type: Number, default: 0 },
+  dur: { type: Number, default: 620 },
+  paso: { type: Number, default: 0 },
+  cilindro: { type: Number, default: 0 },
+  visible: { type: Boolean, default: false },
+  cayendo: { type: Boolean, default: false },
+  llenado: { type: Number, default: 0 },
+  m2: { type: Number, default: 0 },
+  m3: { type: Number, default: 0 },
+  s2: { type: Number, default: 0 },
+  productos: { type: Number, default: 0 },
+  material: { type: Boolean, default: true },
+})
+
+const RECORRIDO = 96
+const BASE_X = 600
+const BASE_Y = 273
+
+const estiloCilindro = computed(() => ({
+  transform: props.cayendo
+    ? `translate(${RECORRIDO + 72}px, 190px) rotate(34deg)`
+    : `translate(${RECORRIDO * props.cilindro}px, 0px)`,
+  transformOrigin: `${BASE_X + 38}px 290px`,
+  transformBox: 'view-box',
+  opacity: props.visible ? 1 : 0,
+  transition: `transform ${props.cayendo ? props.dur * 1.4 : props.dur}ms cubic-bezier(0.42, 0, 0.25, 1), opacity 140ms linear`,
+}))
+
+const estiloTambor = computed(() => ({
+  transform: `rotate(${props.giro}deg)`,
+  transformOrigin: '800px 290px',
+  transformBox: 'view-box',
+  transition: `transform ${props.dur}ms cubic-bezier(0.42, 0, 0.25, 1)`,
+}))
+
+const estiloCarro = (valor) => ({
+  transform: `translate(${valor * 26}px, 0px)`,
+  transformBox: 'view-box',
+  transition: `transform ${props.dur}ms cubic-bezier(0.42, 0, 0.25, 1)`,
+})
+
 const golosinasTolva = [
   { x: 88, y: 96, c: '#fbbf24' },
   { x: 120, y: 96, c: '#fb923c' },
@@ -51,11 +93,11 @@ const cilindrosSemitolva = [
 ]
 
 const golosinasCilindro = [
-  { x: 712, y: 284, c: '#fbbf24' },
-  { x: 726, y: 294, c: '#f472b6' },
-  { x: 740, y: 283, c: '#a3e635' },
-  { x: 752, y: 296, c: '#fb923c' },
-  { x: 764, y: 286, c: '#38bdf8' },
+  { x: 612, y: 289, c: '#fbbf24' },
+  { x: 626, y: 297, c: '#f472b6' },
+  { x: 640, y: 285, c: '#a3e635' },
+  { x: 654, y: 296, c: '#fb923c' },
+  { x: 666, y: 288, c: '#38bdf8' },
 ]
 
 const muescas = Array.from({ length: 16 }, (_, i) => i * 22.5)
@@ -76,7 +118,7 @@ const producto = [
     role="img"
     aria-labelledby="sinoptico-titulo sinoptico-desc"
   >
-    <title id="sinoptico-titulo">Sinóptico de la empaquetadora</title>
+    <title id="sinoptico-titulo">Sinóptico animado de la empaquetadora</title>
     <desc id="sinoptico-desc">
       Tolva de golosinas con sensor de nivel, canal de dosificación con los motores 2 y 3, semitolva
       vibratoria de cilindros vacíos, solenoide 1 de inserción, tambor de 16 posiciones accionado
@@ -84,12 +126,12 @@ const producto = [
     </desc>
 
     <defs>
-      <pattern id="retícula" width="20" height="20" patternUnits="userSpaceOnUse">
+      <pattern id="reticula" width="20" height="20" patternUnits="userSpaceOnUse">
         <path d="M20 0H0V20" fill="none" stroke="#1e293b" stroke-width="0.6" stroke-opacity="0.5" />
       </pattern>
     </defs>
 
-    <rect width="1000" height="580" fill="url(#retícula)" />
+    <rect width="1000" height="580" fill="url(#reticula)" />
 
     <!-- Tolva de golosinas -->
     <g>
@@ -106,10 +148,18 @@ const producto = [
         :cy="g.y"
         r="4.2"
         :fill="g.c"
-        fill-opacity="0.85"
+        :opacity="material ? 0.85 : 0.1"
+        style="transition: opacity 400ms ease"
       />
-      <circle cx="96" cy="172" r="3.6" fill="#34d399" />
-      <circle cx="96" cy="172" r="7" fill="none" stroke="#34d399" stroke-opacity="0.35" />
+      <circle cx="96" cy="172" r="3.6" :fill="material ? '#34d399' : '#fbbf24'" />
+      <circle
+        cx="96"
+        cy="172"
+        r="7"
+        fill="none"
+        :stroke="material ? '#34d399' : '#fbbf24'"
+        stroke-opacity="0.35"
+      />
       <text x="86" y="176" text-anchor="end" fill="#64748b" font-size="9">S nivel</text>
       <text
         x="140"
@@ -150,7 +200,7 @@ const producto = [
         stroke-width="1.5"
         stroke-dasharray="5 5"
       />
-      <g>
+      <g :style="estiloCarro(m2)">
         <rect
           x="296"
           y="168"
@@ -159,14 +209,14 @@ const producto = [
           rx="4"
           fill="#0f1a2a"
           stroke="#2dd4bf"
-          stroke-width="1.5"
+          :stroke-width="paso === 4 ? 2.5 : 1.5"
         />
         <line x1="330" y1="192" x2="330" y2="210" stroke="#2dd4bf" stroke-width="3" />
         <text x="313" y="162" text-anchor="middle" fill="#5eead4" font-size="10" font-weight="700">
           M2
         </text>
       </g>
-      <g>
+      <g :style="estiloCarro(m3)">
         <rect
           x="560"
           y="168"
@@ -175,7 +225,7 @@ const producto = [
           rx="4"
           fill="#0f1a2a"
           stroke="#a78bfa"
-          stroke-width="1.5"
+          :stroke-width="paso === 4 ? 2.5 : 1.5"
         />
         <line x1="594" y1="192" x2="594" y2="210" stroke="#a78bfa" stroke-width="3" />
         <text x="577" y="162" text-anchor="middle" fill="#c4b5fd" font-size="10" font-weight="700">
@@ -250,27 +300,22 @@ const producto = [
         rx="6"
         fill="#0f1a2a"
         stroke="#fb7185"
-        stroke-width="1.5"
+        :stroke-width="paso === 3 ? 2.5 : 1.5"
       />
-      <line x1="582" y1="290" x2="606" y2="290" stroke="#fb7185" stroke-width="3.5" />
+      <line
+        x1="582"
+        y1="290"
+        :x2="600 + RECORRIDO * cilindro"
+        y2="290"
+        stroke="#fb7185"
+        stroke-width="3.5"
+      />
       <text x="551" y="264" text-anchor="middle" fill="#fda4af" font-size="10" font-weight="700">
         S1
       </text>
       <text x="551" y="330" text-anchor="middle" fill="#64748b" font-size="9">
         inserta cilindro
       </text>
-      <rect
-        x="606"
-        y="273"
-        width="54"
-        height="34"
-        rx="6"
-        fill="#fbbf24"
-        fill-opacity="0.12"
-        stroke="#fbbf24"
-        stroke-opacity="0.7"
-        stroke-width="1.5"
-      />
     </g>
 
     <!-- Solenoide 2: brazo de compactación -->
@@ -283,9 +328,16 @@ const producto = [
         rx="6"
         fill="#0f1a2a"
         stroke="#fb7185"
-        stroke-width="1.5"
+        :stroke-width="paso === 5 ? 2.5 : 1.5"
       />
-      <line x1="658" y1="352" x2="684" y2="322" stroke="#fb7185" stroke-width="3.5" />
+      <line
+        x1="658"
+        y1="352"
+        :x2="684 + 10 * s2"
+        :y2="322 - 8 * s2"
+        stroke="#fb7185"
+        stroke-width="3.5"
+      />
       <text x="629" y="388" text-anchor="middle" fill="#fda4af" font-size="10" font-weight="700">
         S2
       </text>
@@ -304,17 +356,24 @@ const producto = [
         stroke-width="1"
         stroke-dasharray="3 5"
       />
-      <g v-for="(angulo, i) in muescas" :key="`m${i}`" :transform="`rotate(${angulo} 800 290)`">
-        <line
-          x1="912"
-          y1="290"
-          x2="926"
-          y2="290"
-          stroke="#334155"
-          stroke-width="9"
-          stroke-linecap="round"
-        />
+
+      <!-- Rotor: muescas y muesca de sincronización -->
+      <g :style="estiloTambor">
+        <g v-for="(angulo, i) in muescas" :key="`m${i}`" :transform="`rotate(${angulo} 800 290)`">
+          <line
+            x1="912"
+            y1="290"
+            x2="926"
+            y2="290"
+            :stroke="paso === 6 ? '#22d3ee' : '#475569'"
+            stroke-width="9"
+            stroke-linecap="round"
+          />
+          <circle cx="870" cy="290" r="4.5" fill="#1e293b" stroke="#334155" stroke-width="1" />
+        </g>
+        <polygon points="793,146 807,146 800,160" fill="#22d3ee" fill-opacity="0.75" />
       </g>
+
       <circle cx="800" cy="290" r="24" fill="#0f1a2a" stroke="#22d3ee" stroke-opacity="0.45" />
       <text
         x="800"
@@ -337,7 +396,6 @@ const producto = [
       />
       <polygon points="874,290 882,280 868,278" fill="#22d3ee" fill-opacity="0.45" />
 
-      <polygon points="793,146 807,146 800,160" fill="#22d3ee" fill-opacity="0.7" />
       <text x="786" y="152" text-anchor="end" fill="#64748b" font-size="9">S·SYNC</text>
 
       <text x="948" y="116" text-anchor="end" fill="#cbd5e1" font-size="11" font-weight="600">
@@ -362,11 +420,25 @@ const producto = [
         width="76"
         height="36"
         rx="6"
+        fill="none"
+        stroke="#475569"
+        stroke-width="1"
+        stroke-dasharray="4 4"
+      />
+    </g>
+
+    <!-- Cilindro: pista, muesca y caída -->
+    <g :style="estiloCilindro">
+      <rect
+        x="600"
+        y="273"
+        width="76"
+        height="34"
+        rx="6"
         fill="#fbbf24"
         fill-opacity="0.12"
         stroke="#fbbf24"
-        stroke-opacity="0.75"
-        stroke-width="1.5"
+        :stroke-width="paso === 4 || paso === 5 ? 2.2 : 1.5"
       />
       <circle
         v-for="(g, i) in golosinasCilindro"
@@ -375,7 +447,8 @@ const producto = [
         :cy="g.y"
         r="3.6"
         :fill="g.c"
-        fill-opacity="0.9"
+        :opacity="llenado"
+        style="transition: opacity 260ms ease"
       />
     </g>
 
@@ -383,19 +456,6 @@ const producto = [
     <g>
       <path d="M656 334L716 438" fill="none" stroke="#475569" stroke-width="1.5" />
       <path d="M692 338L754 442" fill="none" stroke="#475569" stroke-width="1.5" />
-      <rect
-        x="692"
-        y="385"
-        width="28"
-        height="12"
-        rx="6"
-        fill="#fbbf24"
-        fill-opacity="0.14"
-        stroke="#fbbf24"
-        stroke-opacity="0.55"
-        stroke-width="1.2"
-        transform="rotate(32 706 391)"
-      />
       <polygon
         points="706,442 906,442 886,528 726,528"
         fill="#0f1a2a"
@@ -404,10 +464,10 @@ const producto = [
         stroke-width="1.5"
       />
       <rect
-        v-for="(p, i) in producto"
-        :key="`p${i}`"
-        :x="p.x"
-        :y="p.y"
+        v-for="n in productos"
+        :key="`p${n}`"
+        :x="producto[n - 1].x"
+        :y="producto[n - 1].y"
         width="34"
         height="13"
         rx="6.5"
