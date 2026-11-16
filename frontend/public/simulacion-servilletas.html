@@ -814,5 +814,43 @@ const rev=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.
 document.querySelectorAll('#pf-app .reveal:not(.in)').forEach(el=>rev.observe(el));
 })();
 </script>
+
+<!-- ══════════════ MODO EMBEBIDO ══════════════
+     Si la página se carga dentro de un iframe se oculta el resto del sitio y solo
+     queda la simulación. Además se comunica la altura real para que el iframe se
+     ajuste sin barras de scroll internas. -->
+<style>
+html.pf-embed,html.pf-embed body{background:var(--bg)}
+html.pf-embed #pf-app .nav,html.pf-embed #pf-app .hero,html.pf-embed #pf-app #contacto,
+html.pf-embed #pf-app footer,html.pf-embed #pf-app .sechead,html.pf-embed #pf-app .proj-head,
+html.pf-embed #pf-app .bg,html.pf-embed #pf-app .blob,html.pf-embed #pf-app .grain{display:none!important}
+html.pf-embed #pf-app main{max-width:none;padding:0}
+html.pf-embed #pf-app article.card.featured{margin:0;border:0;border-radius:0;background:transparent;box-shadow:none;overflow:hidden}
+html.pf-embed #pf-app .reveal{opacity:1!important;transform:none!important}
+@media(min-width:761px){
+  html.pf-embed #pf-app .simgrid{grid-template-columns:minmax(0,1fr) 306px}
+  html.pf-embed #pf-app .simlower{grid-template-columns:1.1fr 1fr 1fr}
+  html.pf-embed #pf-app .simlower>div{border-right:1px solid var(--line);border-bottom:0}
+  html.pf-embed #pf-app .simlower>div:last-child{grid-column:auto;border-top:0}
+}
+</style>
+<script>
+(function(){
+  if(window.self===window.top)return;
+  document.documentElement.classList.add('pf-embed');
+  var tarjeta=document.querySelector('article.card.featured');
+  if(!tarjeta)return;
+  var ultima=0;
+  function medir(){
+    var alto=Math.ceil(tarjeta.getBoundingClientRect().height);
+    if(alto<200||Math.abs(alto-ultima)<6)return;
+    ultima=alto;
+    try{parent.postMessage({tipo:'pf-alto',alto:alto},'*')}catch(e){}
+  }
+  if('ResizeObserver' in window)new ResizeObserver(medir).observe(tarjeta);
+  window.addEventListener('load',medir);
+  setTimeout(medir,400);
+})();
+</script>
 </body>
 </html>
