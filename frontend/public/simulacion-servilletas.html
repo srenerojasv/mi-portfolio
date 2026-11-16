@@ -139,6 +139,10 @@ body{margin:0}
 #pf-app .ctlbody{overflow-y:auto;padding:15px 17px 17px;display:flex;flex-direction:column;gap:16px}
 #pf-app .group{display:flex;flex-direction:column;gap:11px}
 #pf-app .gl{font-size:9.5px;letter-spacing:.22em;color:var(--amber);font-weight:700;text-transform:uppercase;display:flex;align-items:center;gap:8px}
+#pf-app summary.gl{cursor:pointer;list-style:none;user-select:none}
+#pf-app summary.gl::-webkit-details-marker{display:none}
+#pf-app summary.gl::after{content:"+";margin-left:auto;font-family:var(--mono);font-size:13px;color:var(--faint);line-height:1}
+#pf-app details[open]>summary.gl::after{content:"–"}
 #pf-app .gl::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--line2),transparent)}
 #pf-app .ctl{display:flex;flex-direction:column;gap:6px}
 #pf-app .ctl .row{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
@@ -419,14 +423,14 @@ body{margin:0}
             <div class="ctl"><div class="row"><label for="ns-seal">Tiempo de sellado</label><span class="val" id="ns-v-seal">650 ms</span></div><input type="range" id="ns-seal" min="200" max="1500" step="50" value="650"></div>
             <div class="ctl"><div class="row"><label for="ns-pressure">Presión neumática</label><span class="val" id="ns-v-pressure">6.0 bar</span></div><input type="range" id="ns-pressure" min="2" max="8" step="0.5" value="6"><div class="note">velocidad de cilindros y barra</div></div>
           </div>
-          <div class="group">
-            <div class="gl">Visualización</div>
+          <details class="group" id="ns-grupo-vis" open>
+            <summary class="gl">Visualización</summary>
             <div class="ctl"><div class="row"><label for="ns-style">Estilo</label></div><select id="ns-style"><option value="real">Industrial · realista</option><option value="bp">Blueprint · esquema</option><option value="hc">Alto contraste</option></select></div>
             <div class="ctl"><div class="row"><label for="ns-zoom">Zoom</label><span class="val" id="ns-v-zoom">1.00×</span></div><input type="range" id="ns-zoom" min="0.7" max="1.6" step="0.05" value="1"></div>
             <div class="ctl switchrow"><label for="ns-guides">Guías y tags E/S</label><span class="switch"><input type="checkbox" id="ns-guides" checked><span class="tr"><span class="kn"></span></span></span></div>
             <div class="ctl"><div class="row"><label for="ns-detail">Detalle</label></div><select id="ns-detail"><option value="alto">Alto · vapor + motas</option><option value="medio">Medio</option><option value="bajo">Bajo · esencial</option></select></div>
             <div class="ctl"><div class="row"><label for="ns-film">Tinte del film</label></div><input type="color" id="ns-film" value="#bfe6ff"></div>
-          </div>
+          </details>
           <div class="group">
             <div class="gl">Operación</div>
             <button class="btnfull primary" id="ns-pause"><svg id="ns-pause-ic" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16" rx="1"/><rect x="14" y="4" width="4" height="16" rx="1"/></svg><span id="ns-pause-lb">Pausar ciclo</span></button>
@@ -838,6 +842,11 @@ html.pf-embed #pf-app .reveal{opacity:1!important;transform:none!important}
 (function(){
   if(window.self===window.top)return;
   document.documentElement.classList.add('pf-embed');
+  // En el portafolio el panel de visualización arranca plegado y la máquina en silencio.
+  var grupoVis=document.getElementById('ns-grupo-vis');
+  if(grupoVis)grupoVis.removeAttribute('open');
+  var sonido=document.getElementById('pf-sound');
+  if(sonido&&sonido.getAttribute('aria-pressed')==='true')sonido.click();
   var tarjeta=document.querySelector('article.card.featured');
   if(!tarjeta)return;
   var ultima=0;
